@@ -10,10 +10,10 @@ import (
 	"k8s.io/client-go/tools/cache"
 
 	"mydev.org/k8s-crd-example/api/types/v1alpha1"
-	client_v1alpha1 "mydev.org/k8s-crd-example/clientset/v1alpha1"
+	clientV1alpha1 "mydev.org/k8s-crd-example/clientset/v1alpha1"
 )
 
-func WatchResources(clientSet client_v1alpha1.ExampleV1Alpha1Interface) cache.Store {
+func WatchResources(clientSet clientV1alpha1.ExampleV1Alpha1Interface) cache.Store {
 	projectStore, projectController := cache.NewInformer(
 		&cache.ListWatch{
 			ListFunc: func(lo metav1.ListOptions) (result runtime.Object, err error) {
